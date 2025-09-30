@@ -18,5 +18,14 @@
         <li><a href="ex9.php">Ejercicio 9</a></li>
         <li><a href="ex10.php">Ejercicio 10</a></li>
     </ul>
+    <h1>Ejercicios PHP OOP</h1>
+    <ul>
+        <li><a href="OOP/ex1oop.php">Ejercicio 1</a></li>
+        <li><a href="OOP/ex2oop.php">Ejercicio 2</a></li>
+        <li><a href="OOP/ex3oop.php">Ejercicio 3</a></li>
+
+    </ul>
+
+
 </body>
 </html>
