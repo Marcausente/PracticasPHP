@@ -29,8 +29,8 @@
     <ul>
         <li><a href="FORMS/ex1forms.php">Ejercicio 1</a></li>
         <li><a href="FORMS/ex2forms.php">Ejercicio 2</a></li>
-        <li><a href="OOP/ex3forms.php">Ejercicio 3</a></li>
-        <li><a href="OOP/ex4forms.php">Ejercicio 1</a></li>
+        <li><a href="FORMS/ex3forms.php">Ejercicio 3</a></li>
+        <li><a href="FORMS/ex4forms.php">Ejercicio 1</a></li>
     </ul>
 
 
