@@ -25,6 +25,13 @@
         <li><a href="OOP/ex3oop.php">Ejercicio 3</a></li>
 
     </ul>
+    <h1>Ejercicios Formularios</h1>
+    <ul>
+        <li><a href="FORMS/ex1forms.php">Ejercicio 1</a></li>
+        <li><a href="FORMS/ex2forms.php">Ejercicio 2</a></li>
+        <li><a href="OOP/ex3forms.php">Ejercicio 3</a></li>
+        <li><a href="OOP/ex4forms.php">Ejercicio 1</a></li>
+    </ul>
 
 
 </body>
