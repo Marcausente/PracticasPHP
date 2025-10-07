@@ -8,7 +8,17 @@ $fecha = $_POST['fecha_nacimiento'] ?? '';
 
 $edad = veredad($fecha);
 $errores = validarcampos($nombre, $apellido, $correo, $edad, $fecha);
-printresults()
+printresults($errores, $nombre, $apellido, $correo, $edad, $fecha);
+
+function printresults($errores, $nombre, $apellido, $correo, $edad, $fecha){
+  if(empty($errores)){ //Si no hay errores mostramos los datos
+    echo "Nombre: " . $nombre . '<br><br>'. "Apellido: " . $apellido . '<br><br>' . "Correo: " . $correo . '<br><br>' . "Edad: " . $edad . '<br><br>' . "Fecha Nacimiento: " . $fecha;
+  }else{
+    for($i = 0; $i < count($errores); $i++){ //Continua mientras $i sea menor a la cantidad de errores que tiene el array
+      echo $errores[$i];
+    }
+  }
+}
 
 function veredad($fecha){
   $fechaNacimiento = new DateTime($fecha); // Convertir string a DateTime
@@ -22,12 +32,16 @@ function validarcampos($nombre, $apellido, $correo, $edad, $fecha){
 $errores = [];
 
 if (empty($nombre) || empty($apellido) || empty($correo) || empty($fecha)){
-  $errores[] = "Debes rellenar los campos";
-}else if (!str_contains($correo, '@')){
-  $errores[] = "El correo no es valido";
-}else if ($edad < 18){
-  $errores[] = "Debes ser mayor de edad";
+  $errores[] = "Debes rellenar los campos" . "<br><br>";
 }
+
+if (!str_contains($correo, '@')){
+  $errores[] = "El correo no es valido" . "<br><br>";
+}
+
+if ($edad < 18){
+  $errores[] = "Debes ser mayor de edad" . "<br><br>";
+} //USAMOS IF INDEPENDIENTES, CON ELSE IF SOLO SE PUEDE EJECUTAR UNA CONDICION
 
 return $errores;
 
