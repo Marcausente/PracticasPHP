@@ -8,7 +8,7 @@ $correctname = "usuario";
 
 if ($user == $correctname && $password == $correctpass){
   echo "Bienvenido, el usuario y la contraseña coinciden";
-}else if{
+}else{
   echo "El usuario y la contraeña no coinciden";
 };
 
