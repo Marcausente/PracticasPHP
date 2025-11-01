@@ -15,3 +15,5 @@ for ($i = 0; $i < 4; $i++){ //La i recorrera los arrays
   echo "<br>";
   echo "<br>";
 }
+
+$paises = [["Francia", "Paris"], ["Italia", "roma"], ["Madrid", "España"]];
