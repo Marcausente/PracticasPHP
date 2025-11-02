@@ -1,16 +1,40 @@
 <?php
 
-$user = $_POST['user'] ?? ''; //El ?? hace que si no hay contenido se aplica ese valor;
-$password = $_POST['password'] ?? '';
+session_start(); // Si vamos a utilizar sesiones siempre la iniciamos antes
+$correctuser = "Milena";
+$correctpassword = "frutisha";
+$acceso = false;
 
-$correctpass = "abc1234";
-$correctname = "usuario";
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+  $user = $_POST["user"];
+  $password = $_POST["password"];
 
-if ($user == $correctname && $password == $correctpass){
-  echo "Bienvenido, el usuario y la contraseña coinciden";
+$acceso = coincidencia($correctuser, $correctpassword, $user, $password, $acceso);
+
+
+  if(!empty($user) && !empty($password)){ //El isset define si no es null o si esta definida, para ver si esta vacia usamos empty
+    if ($acceso == true){
+       $_SESSION["user_id"] = 1;
+      echo "La contraseña y el usuario coinciden, bienvenido/a " . $user . "<br> <br>";
+      echo "Tu ID de sesion es: " . session_id();
+    }else{
+      echo "La contraseña y el usuario no coinciden";
+    }
+  }else{
+    echo "Debes introducir todos los valores";
+  }
 }else{
-  echo "El usuario y la contraeña no coinciden";
-};
+  echo "Error al verificar el formulario";
+}
+
+function coincidencia($correctuser, $correctpassword, $user, $password, $acceso){
+  if($user == $correctuser && $password == $correctpassword){
+    $acceso = true;
+  }else{
+    $acceso = false;
+  }
+  return $acceso;
+}
 
 ?>
 
